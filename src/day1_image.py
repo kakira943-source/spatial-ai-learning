@@ -2,20 +2,14 @@ import cv2
 
 img = cv2.imread("images/test.jpg")
 
-print("shape =", img.shape)
+print("color shape =", img.shape)
 
-h, w, c = img.shape
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-print("height =", h)
-print("width  =", w)
-print("channel =", c)
+print("gray shape =", gray.shape)
 
-# 画像中央の画素
-pixel = img[h // 2, w // 2]
-
-print("center pixel =", pixel)
-
-cv2.imshow("image", img)
+cv2.imshow("color", img)
+cv2.imshow("gray", gray)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
